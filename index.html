@@ -204,10 +204,10 @@
 
     .bismillah {
       font-family: "IranNastaliq", serif;
-      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      font-size: clamp(1rem, 5vw, 2rem);
       color: #f7e5b2;
       line-height: 1.2;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-shadow: 0 0 18px rgba(212, 175, 55, .45);
       position: relative;
       z-index: 2;
@@ -217,7 +217,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 5px;
       margin: 8px auto 20px;
       position: relative;
       z-index: 2;
@@ -238,8 +238,8 @@
     }
 
     .logo6 {
-      width: clamp(200px, 60vw, 420px);
-      max-width: 90%;
+      width: clamp(400px, 80vw, 600px);
+      max-width: 100%;
       margin: 0 auto 8px;
       display: block;
       animation: floatingLogo 6s ease-in-out infinite;
@@ -249,7 +249,7 @@
 
     .text1 {
       width: clamp(140px, 40vw, 280px);
-      max-width: 75%;
+      max-width: 70%;
       margin: 0 auto 12px;
       display: block;
       position: relative;
@@ -402,6 +402,7 @@
     }
 
     /* ---------- Countdown ---------- */
+    /* ---------- Countdown - در یک خط ---------- */
     .count-title {
       text-align: center;
       font-size: clamp(1.4rem, 4vw, 2rem);
@@ -414,15 +415,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 8px;
+      flex-wrap: nowrap;        /* ← مهم: جلوگیری از شکستن به خط بعد */
       direction: ltr;
     }
 
     .timer div {
-      width: clamp(72px, 20vw, 125px);
-      height: clamp(72px, 20vw, 125px);
-      border-radius: 18px;
+      width: clamp(60px, 16vw, 100px);    /* ← سایز کوچک‌تر */
+      height: clamp(60px, 16vw, 100px);   /* ← سایز کوچک‌تر */
+      border-radius: 16px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -434,14 +435,14 @@
     }
 
     .timer div:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       border-color: #f3c45d;
       box-shadow: 0 0 20px rgba(212, 175, 55, .45);
     }
 
     .timer span {
       color: #f3c45d;
-      font-size: clamp(28px, 7vw, 42px);
+      font-size: clamp(22px, 5vw, 34px);   /* ← فونت کوچک‌تر */
       font-weight: 700;
       text-shadow: 0 0 12px rgba(212, 175, 55, .45);
       line-height: 1.2;
@@ -450,8 +451,8 @@
     .timer p {
       color: #fff;
       opacity: .9;
-      font-size: clamp(12px, 3vw, 17px);
-      margin-top: 2px;
+      font-size: clamp(10px, 2vw, 14px);   /* ← فونت کوچک‌تر */
+      margin-top: 0px;
     }
 
     /* ---------- Location Box ---------- */
@@ -673,14 +674,23 @@
       }
 
       .timer div {
-        width: 65px;
-        height: 65px;
+      width: 55px;           /* ← کوچک‌تر برای موبایل */
+      height: 55px;
+      border-radius: 12px;
       }
 
       .timer span {
-        font-size: 24px;
+        font-size: 20px;       /* ← کوچک‌تر برای موبایل */
       }
 
+      .timer p {
+        font-size: 9px;        /* ← کوچک‌تر برای موبایل */
+      }
+
+      .timer {
+        gap: 5px;              /* ← فاصله کمتر */
+      }
+      
       .map-btn {
         width: 80px;
         height: 80px;
@@ -770,8 +780,9 @@
       <a class="card" href="tg://resolve?domain=hanieh_jewelry_designer" target="_blank">
         <span class="icon">📷</span>
         <h2>ارسال عکس</h2>
-        <p>از طریق تلگرام</p>
+        <p>لحظات به یاد ماندنی خود از این مراسم را با ما به اشتراک بگزارید.💕</p>
       </a>
+
 
       <!-- شمارش معکوس -->
       <div class="card">
@@ -797,12 +808,11 @@
       </div>
     </div>
   </section>
-
   <!-- ====== FOOTER ====== -->
   <footer>
     <h2>منتظر حضور گرم شما هستیم</h2>
     <h2 style="font-size:clamp(28px,6vw,42px);">❤️💗❤️</h2>
-    <a class="btn" href="tg://resolve?domain=hanieh_jewelry_designer" target="_blank">💌 ارتباط در تلگرام 💌</a>
+    <a class="btn" href="tg://resolve?domain=hanieh_jewelry_designer">💌 ارتباط در تلگرام 💌</a>
   </footer>
 
   <!-- ====== BACK TO TOP ====== -->
@@ -828,7 +838,9 @@
 
     // ---------- Countdown ----------
     (function() {
-      const targetDate = new Date('2026-07-25T20:00:00').getTime();
+      // تاریخ هدف: 30 مرداد 1405 ساعت 18:30 (۶:۳۰ عصر)
+      // معادل: 2026-08-21 18:30:00
+      const targetDate = new Date('2026-08-21T18:30:00').getTime();
 
       function updateTimer() {
         const now = Date.now();
