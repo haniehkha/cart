@@ -160,7 +160,7 @@ top:-35px;
 
 #loader h2{
 
-margin-top:40px;
+margin-top:20px;
 
 font-weight:300;
 
@@ -180,7 +180,7 @@ transform:rotate(45deg) scale(1.15);
 
 .hero{
 
-height:100vh;
+min-height:40vh;
 
 display:flex;
 
@@ -188,7 +188,7 @@ justify-content:center;
 
 align-items:center;
 
-padding:30px;
+padding:10px;
 
 text-align:center;
 
@@ -198,9 +198,9 @@ text-align:center;
 
 width:100%;
 
-max-width:900px;
+max-width:800px;
 
-padding:70px;
+padding:25px;
 
 background:rgba(255,255,255,.08);
 
@@ -221,7 +221,7 @@ border:1px solid rgba(255,255,255,.1);
 
     text-align:center;
 
-    line-height:2;
+    line-height:1;
 
     text-shadow:
         0 0 8px rgba(212,175,55,.35),
@@ -235,9 +235,9 @@ border:1px solid rgba(255,255,255,.1);
 
 font-size:80px;
 
-line-height:1.5;
+line-height:1;
 
-margin-bottom:20px;
+margin-bottom:50px;
 
 }
 
@@ -249,34 +249,28 @@ color:#ff4b7d;
 
 .invite{
 
-
     font-family:"IranNastaliq";
 
-    font-size:50px;
+    font-size:80px;
 
     color:hsl(47, 47%, 87%);
 
     text-align:center;
 
-    line-height:2;
+    line-height:1;
 
-    text-shadow:
-        0 0 8px rgba(212,175,55,.35),
-        0 2px 10px rgba(0,0,0,.5);
-
-    margin-bottom:35px;
-
+    margin-bottom:0px;
 }
 
 .btn{
 
 display:inline-block;
 
-margin-top:35px;
+margin-top:0px;
 
-padding:18px 40px;
+padding:18px 30px;
 
-border-radius:60px;
+border-radius:50px;
 
 background:white;
 
@@ -319,7 +313,7 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
 gap:30px;
 
-margin-top:50px;
+margin-top:0px;
 
 }
 
@@ -355,17 +349,17 @@ box-shadow:0 15px 40px rgba(0,0,0,.45);
 
 .icon{
 
-font-size:60px;
+font-size:50px;
 
-margin-bottom:20px;
+margin-bottom:0px;
 
 }
 
 .card h3{
 
-font-size:28px;
+font-size:20px;
 
-margin-bottom:15px;
+margin-bottom:0px;
 
 }
 
@@ -418,7 +412,7 @@ justify-content:center;
 
 align-items:center;
 
-gap:20px;
+gap:8px;
 
 flex-wrap:wrap;
 
@@ -430,9 +424,9 @@ direction:ltr;
 
 text-align:center;
 
-margin-bottom:40px;
+margin-bottom:0px;
 
-font-size:42px;
+font-size:30px;
 
 }
 
@@ -466,7 +460,7 @@ font-weight:bold;
 
 .timer p{
 
-margin-top:8px;
+margin-top:0px;
 
 font-size:18px;
 
@@ -492,7 +486,7 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
 gap:25px;
 
-margin-top:40px;
+margin-top:0px;
 
 }
 
@@ -554,7 +548,7 @@ footer h3{
 
 font-size:34px;
 
-margin-bottom:20px;
+margin-bottom:0px;
 
 }
 
@@ -710,10 +704,8 @@ font-size:18px;
 }
 
 .invite{
-
-font-size:18px;
-
-line-height:2;
+ font-size:40px;
+ line-height:2;
 
 }
 
@@ -843,7 +835,7 @@ font-size:90px;
 
 .invite{
 
-font-size:26px;
+font-size:50px;
 
 }
 
@@ -980,7 +972,7 @@ height:320px;
 
 .hero-text{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:20px;
 }
 
 .couple-names{
@@ -1026,13 +1018,13 @@ height:320px;
 }
 
 .invite{
-    font-family:'Vazirmatn', sans-serif;
-    font-size:1.45rem;
-    line-height:2.3;
+    font-family:'IranNastaliq';
+    font-size:2.5rem;
+    line-height:2;
     color:#f5f5f5;
     max-width:720px;
     margin:0 auto;
-    font-weight:300;
+    font-weight:200;
     letter-spacing:.3px;
     text-shadow:0 2px 12px rgba(0,0,0,.35);
 }
@@ -1057,9 +1049,9 @@ height:320px;
     }
 
     .invite{
-        font-size:1.05rem;
-        line-height:2.1;
-        padding:0 10px;
+        font-size:3.rem;
+        line-height:2;
+        padding:0 25px;
     }
 
 }
