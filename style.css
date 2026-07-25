@@ -627,7 +627,6 @@ section{
 .card h3{
 
     font-size:24px;
-
     margin-bottom:10px;
 
 }
@@ -641,7 +640,59 @@ section{
     font-size:17px;
 
 }
+.overlay,
+.card,
+.location-box{
 
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid rgba(212,175,55,.35);
+
+    box-shadow:
+        0 0 0 1px rgba(255,215,120,.08),
+        0 0 25px rgba(212,175,55,.12),
+        0 25px 50px rgba(0,0,0,.45);
+
+}
+
+.overlay::before,
+.card::before,
+.location-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:inherit;
+
+    padding:1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.7),
+            rgba(212,175,55,.9),
+            rgba(255,255,255,.2),
+            rgba(212,175,55,.9)
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:.75;
+
+    pointer-events:none;
+
+}
 /*==================================================
                 Upload
 ==================================================*/
@@ -1033,7 +1084,59 @@ section{
     color:#111;
 
 }
+.overlay,
+.card,
+.location-box{
 
+    position:relative;
+
+    overflow:hidden;
+
+    border:1px solid rgba(212,175,55,.35);
+
+    box-shadow:
+        0 0 0 1px rgba(255,215,120,.08),
+        0 0 25px rgba(212,175,55,.12),
+        0 25px 50px rgba(0,0,0,.45);
+
+}
+
+.overlay::before,
+.card::before,
+.location-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:inherit;
+
+    padding:1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.7),
+            rgba(212,175,55,.9),
+            rgba(255,255,255,.2),
+            rgba(212,175,55,.9)
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:.75;
+
+    pointer-events:none;
+
+}
 /*==================================================
                 Music Button
 ==================================================*/
@@ -1256,169 +1359,241 @@ footer p{
 
 }
 
-/*==========================
-        Mobile
-===========================*/
+/*==================================================
+                Mobile
+==================================================*/
+/*==================================================
+                Mobile
+==================================================*/
 
 @media (max-width:768px){
 
-    section{
-        padding:40px 0;
+    html{
+        font-size:15px;
     }
 
+    section{
+        padding:28px 0;
+    }
 
     .hero{
-        min-height:88vh;
-        padding:20px 15px;
+        min-height:auto;
+        padding:18px 12px 25px;
     }
 
-    .hero-card{
-        padding:28px 22px;
-        border-radius:24px;
-    }
-
-    .logo{
-        width:250px;
+    .hero-card,
+    .overlay{
+        width:100%;
+        padding:22px 18px;
+        border-radius:22px;
+        margin:0 auto;
     }
 
     .bismillah{
-        font-size:3rem;
-        margin-bottom:20px;
+        font-size:2.9rem;
+        line-height:1.1;
+        margin-bottom:12px;
+    }
+
+    .gold-divider{
+        margin:10px auto 18px;
+    }
+
+    .gold-divider::before,
+    .gold-divider::after{
+        width:70px;
+    }
+
+    .logo,
+    .logo6{
+        width:260px;
+        max-width:90%;
+        margin:0 auto 12px;
+    }
+
+    .text1{
+        width:170px;
+        max-width:70%;
+        margin:0 auto 15px;
     }
 
     .subtitle{
-        font-size:16px;
+        font-size:15px;
+        margin-bottom:10px;
     }
 
     .couple{
-        flex-direction:column;
         gap:10px;
+        flex-direction:column;
+        margin-bottom:12px;
     }
 
     .couple h1{
-        font-size:2.8rem;
+        font-size:2.7rem;
+        line-height:1.2;
     }
 
-    .couple i{
-        font-size:1.8rem;
+    .couple i,
+    .couple .heart{
+        font-size:1.9rem;
     }
 
     .invite{
         font-size:2rem;
-        line-height:1.9;
-        padding:0 10px;
+        line-height:1.8;
+        margin:10px auto 16px;
+        padding:0 6px;
     }
 
     .invite-btn{
-        width:100%;
-        max-width:330px;
-        height:58px;
+        width:92%;
+        max-width:320px;
+        height:56px;
+        margin-top:12px;
         font-size:18px;
+        border-radius:40px;
     }
 
     .section-title{
-        font-size:1.8rem;
-    }
-
-    .action-grid{
-        grid-template-columns:1fr;
-    }
-
-
-
-    .card i{
-        font-size:44px;
-    }
-
-    .card h3{
-        font-size:20px;
-    }
-
-    .card p{
-        font-size:15px;
-    }
-
-    .timer{
-        gap:12px;
-    }
-
-    .time-box{
-        width:88px;
-        height:88px;
-    }
-
-    .time-box span{
-        font-size:28px;
-    }
-
-    .time-box p{
-        font-size:13px;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-item img{
-        height:250px;
-    }
-
-    .location-box{
-        padding:25px;
-    }
-
-    .location-buttons{
-        gap:15px;
-    }
-
-    .map-btn{
-        width:110px;
-        height:110px;
-    }
-
-    .map-btn i{
-        font-size:36px;
-    }
-
-    .map-btn span{
-        font-size:15px;
-    }
-
-    footer{
-        margin-top:50px;
-        padding:40px 20px;
-    }
-
-    footer h2{
-        font-size:28px;
-    }
-
-    footer p{
-        font-size:15px;
-    }
-
-    #topButton{
-        width:50px;
-        height:50px;
-        font-size:18px;
-        left:15px;
-        bottom:15px;
+        font-size:2rem;
+        margin-bottom:22px;
     }
 
     .actions,
     .countdown,
     .gallery,
     .music{
-        padding:25px 0;
+        padding:18px 0;
     }
 
-    .location-box,
-    .card,
-    .overlay{
-        margin:15px auto;
+    .action-grid{
+        grid-template-columns:1fr;
+        gap:16px;
     }
+
+    .card{
+        padding:22px 18px;
+        border-radius:20px;
+        margin:0;
+    }
+
+    .card i,
+    .icon{
+        font-size:42px;
+        margin-bottom:10px;
+    }
+
+    .card h3{
+        font-size:22px;
+        margin-bottom:8px;
+    }
+
+    .card p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .count-title{
+        margin-bottom:15px;
+        font-size:18px;
+    }
+
+    .timer{
+        gap:10px;
+    }
+
+    .timer div,
+    .time-box{
+        width:86px;
+        height:86px;
+        border-radius:16px;
+    }
+
+    .timer span,
+    .time-box span{
+        font-size:30px;
+    }
+
+    .timer p,
+    .time-box p{
+        margin-top:2px;
+        font-size:13px;
+    }
+
+    .gallery-grid,
+    .grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .gallery-item img,
+    .grid img{
+        height:220px;
+        border-radius:18px;
+    }
+
+    .location-box{
+        margin-top:18px;
+        padding:22px 18px;
+        border-radius:22px;
+    }
+
+    .location-box h2{
+        font-size:30px;
+        margin-bottom:16px;
+    }
+
+    .location-buttons{
+        gap:14px;
+    }
+
+    .map-btn{
+        width:100px;
+        height:100px;
+        border-radius:18px;
+    }
+
+    .map-btn i{
+        font-size:34px;
+    }
+
+    .map-btn span{
+        font-size:14px;
+        margin-top:8px;
+    }
+
+    .music button,
+    .music-btn{
+        width:60px;
+        height:60px;
+        font-size:24px;
+    }
+
+    footer{
+        margin-top:35px;
+        padding:28px 20px;
+    }
+
+    footer h2,
+    footer h3{
+        font-size:26px;
+        margin-bottom:10px;
+    }
+
+    footer p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    #topButton{
+        width:48px;
+        height:48px;
+        left:15px;
+        bottom:15px;
+        font-size:18px;
+    }
+
 }
-
 /*==========================
       Small Phones
 ===========================*/
@@ -1564,7 +1739,189 @@ footer p{
         );
 
 }
+.overlay::after,
+.card::after,
+.location-box::after{
 
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(255,225,120,.95),
+
+            transparent 70%
+
+        );
+
+    filter:blur(35px);
+
+    opacity:.55;
+
+    animation:borderLight 8s linear infinite;
+
+}
+@keyframes borderLight{
+
+    0%{
+
+        top:-60px;
+        left:-60px;
+
+    }
+
+    25%{
+
+        top:-60px;
+        left:100%;
+
+        transform:translateX(-100%);
+
+    }
+
+    50%{
+
+        top:100%;
+        left:100%;
+
+        transform:
+            translate(-100%,-100%);
+
+    }
+
+    75%{
+
+        top:100%;
+        left:-60px;
+
+        transform:translateY(-100%);
+
+    }
+
+    100%{
+
+        top:-60px;
+        left:-60px;
+
+    }
+
+}
+.timer div{
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(40,33,25,.95),
+
+            rgba(18,18,18,.95)
+
+        );
+
+    border:1px solid rgba(212,175,55,.28);
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255,255,255,.05),
+
+        0 8px 20px rgba(0,0,0,.35);
+
+}
+
+.timer span{
+
+    color:#f3c45d;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    text-shadow:
+
+        0 0 12px rgba(212,175,55,.45);
+
+}
+
+.timer p{
+
+    color:#fff;
+
+    opacity:.9;
+
+}
+.timer div{
+
+    transition:.35s;
+
+}
+
+.timer div:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#f3c45d;
+
+    box-shadow:
+
+        0 0 20px rgba(212,175,55,.45);
+
+}
+.gold-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin:18px auto 35px;
+
+}
+
+.gold-divider::before,
+.gold-divider::after{
+
+    content:"";
+
+    width:110px;
+
+    height:1.5px;
+
+    background:
+
+        linear-gradient(
+            to right,
+            transparent,
+            #d4af37,
+            transparent
+        );
+
+}
+
+.gold-divider span{
+
+    color:#d4af37;
+
+    font-size:28px;
+
+    text-shadow:
+
+        0 0 10px rgba(212,175,55,.45);
+
+}
 /*==================================================
                     End
 ==================================================*/
