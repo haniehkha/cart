@@ -245,14 +245,14 @@ body::after{
 
 .hero{
 
-    min-height:100vh;
+    min-height:auto;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    padding:40px 20px;
 
+    padding:25px 15px;
 }
 
 .hero-card{
@@ -532,11 +532,11 @@ section{
 
     overflow:hidden;
 
-    padding:34px;
+    padding:24px;
 
     text-align:center;
 
-    border-radius:28px;
+    border-radius:22px;
 
     background:var(--surface);
 
@@ -628,7 +628,7 @@ section{
 
     font-size:24px;
 
-    margin-bottom:15px;
+    margin-bottom:10px;
 
 }
 
@@ -636,7 +636,7 @@ section{
 
     color:var(--text-soft);
 
-    line-height:1.9;
+    line-height:1.6;
 
     font-size:17px;
 
@@ -700,7 +700,7 @@ section{
 
     align-items:center;
 
-    gap:18px;
+    gap:10px;
 
     flex-wrap:wrap;
 
@@ -929,9 +929,9 @@ section{
 
     margin:auto;
 
-    padding:42px;
+    padding:24px;
 
-    border-radius:30px;
+    border-radius:22px;
 
     background:var(--surface);
 
@@ -949,9 +949,9 @@ section{
 
     text-align:center;
 
-    margin-bottom:35px;
+    margin-bottom:18px;
 
-    font-size:2.2rem;
+    font-size:32px;
 
 }
 
@@ -1213,8 +1213,12 @@ footer p{
     }
 
     .hero{
-        min-height:92vh;
-    }
+
+    min-height:auto;
+
+    padding:25px 15px;
+
+     }
 
     .hero-card{
         padding:35px;
@@ -1259,11 +1263,13 @@ footer p{
 @media (max-width:768px){
 
     section{
-        padding:45px 0;
+        padding:40px 0;
     }
 
+
     .hero{
-        padding:25px 15px;
+        min-height:88vh;
+        padding:20px 15px;
     }
 
     .hero-card{
@@ -1318,9 +1324,7 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    .card{
-        padding:26px;
-    }
+
 
     .card i{
         font-size:44px;
@@ -1401,6 +1405,18 @@ footer p{
         bottom:15px;
     }
 
+    .actions,
+    .countdown,
+    .gallery,
+    .music{
+        padding:25px 0;
+    }
+
+    .location-box,
+    .card,
+    .overlay{
+        margin:15px auto;
+    }
 }
 
 /*==========================
@@ -1532,7 +1548,7 @@ footer p{
     background:
         linear-gradient(
             var(--gold),
-            #f6df9f
+            #f6db92
         );
 
     border-radius:50px;
@@ -1543,7 +1559,7 @@ footer p{
 
     background:
         linear-gradient(
-            #ffe59b,
+            #cdb77b,
             var(--gold)
         );
 
