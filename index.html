@@ -456,34 +456,46 @@
     }
 
     /* ---------- Location Box ---------- */
+        /* ---------- Location Box ---------- */
     .location-box {
-      max-width: 850px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
       padding: 22px 18px;
       border-radius: 22px;
       background: var(--surface);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(212, 175, 55, .35);
-      box-shadow: 0 0 0 1px rgba(255, 215, 120, .08), 0 0 25px rgba(212, 175, 55, .12), 0 18px 50px rgba(0, 0, 0, .35);
+      border: 1px solid rgba(212, 175, 55, .35);        /* ← حاشیه طلایی */
+      box-shadow: 0 0 0 1px rgba(255, 215, 120, .08), 
+                  0 0 25px rgba(212, 175, 55, .12), 
+                  0 18px 50px rgba(0, 0, 0, .35);
       position: relative;
       overflow: hidden;
+      box-sizing: border-box;
     }
 
+    /* حاشیه درخشان دور باکس */
     .location-box::before {
       content: "";
       position: absolute;
       inset: -1px;
       border-radius: inherit;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(212, 175, 55, .9), rgba(255, 255, 255, .2), rgba(212, 175, 55, .9));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      background: linear-gradient(135deg, 
+        rgba(255, 255, 255, .7), 
+        rgba(212, 175, 55, .9), 
+        rgba(255, 255, 255, .2), 
+        rgba(212, 175, 55, .9));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                    linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       opacity: .75;
       pointer-events: none;
     }
 
+    /* نور متحرک داخل باکس */
     .location-box::after {
       content: "";
       position: absolute;
