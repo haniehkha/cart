@@ -1,149 +1,882 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#111111">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <meta name="theme-color" content="#111111" />
+  <title>کارت دعوت عروسی حسن و هانیه</title>
+  
+  <!-- ====== فایل CSS ====== -->
+  <style>
+    /* ==================================================
+       Wedding Invitation v2.0
+       ================================================== */
 
-<title>کارت دعوت عروسی حسن و هانیه</title>
+    /* ---------- Fonts ---------- */
+    @font-face {
+      font-family: "IranNastaliq";
+      src: url("assets/fonts/IranNastaliq.woff2") format("woff2");
+      font-display: swap;
+    }
 
-<link rel="stylesheet" href="style.css">
+    /* ---------- Root Variables ---------- */
+    :root {
+      --bg: #090909;
+      --surface: rgba(255, 255, 255, .08);
+      --surface-hover: rgba(255, 255, 255, .12);
+      --white: #ffffff;
+      --gold: #d4af37;
+      --gold-light: #f5d27a;
+      --pink: #ff4b7d;
+      --text: #f8f8f8;
+      --text-soft: rgba(255, 255, 255, .75);
+      --border: rgba(255, 255, 255, .12);
+      --radius: 28px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .45);
+      --transition: .35s ease;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    /* ---------- Reset ---------- */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Marhey:wght@400;600;700&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ---------- Background Layers ---------- */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0, 0, 0, .20), rgba(0, 0, 0, .85)),
+        url("assets/images/bg.jpg") center/cover no-repeat;
+      filter: brightness(.35);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(212, 175, 55, .12), transparent 45%);
+      z-index: -1;
+    }
+
+    /* ---------- Glass Effect ---------- */
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* ---------- Loader ---------- */
+    #loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #050505;
+      z-index: 99999;
+      transition: .8s;
+    }
+
+    .loader-heart {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      background: var(--pink);
+      transform: rotate(45deg);
+      animation: heartBeat 1s infinite;
+    }
+
+    .loader-heart::before,
+    .loader-heart::after {
+      content: "";
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--pink);
+    }
+
+    .loader-heart::before {
+      left: -36px;
+    }
+    .loader-heart::after {
+      top: -36px;
+    }
+
+    #loader h2 {
+      margin-top: 28px;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: rotate(45deg) scale(1); }
+      50% { transform: rotate(45deg) scale(1.18); }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 12px 30px;
+      width: 100%;
+    }
+
+    .hero .overlay {
+      width: 100%;
+      max-width: 900px;
+      padding: 35px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, .35);
+      box-shadow: 0 0 0 1px rgba(255, 215, 120, .08), 0 0 25px rgba(212, 175, 55, .12), 0 25px 50px rgba(0, 0, 0, .45);
+      border-radius: var(--radius);
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .hero .overlay::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(212, 175, 55, .9), rgba(255, 255, 255, .2), rgba(212, 175, 55, .9));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: .75;
+      pointer-events: none;
+    }
+
+    .hero .overlay::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(rgba(255, 225, 120, .95), transparent 70%);
+      filter: blur(35px);
+      opacity: .55;
+      animation: borderLight 8s linear infinite;
+    }
+
+    @keyframes borderLight {
+      0% { top: -60px; left: -60px; }
+      25% { top: -60px; left: 100%; transform: translateX(-100%); }
+      50% { top: 100%; left: 100%; transform: translate(-100%, -100%); }
+      75% { top: 100%; left: -60px; transform: translateY(-100%); }
+      100% { top: -60px; left: -60px; }
+    }
+
+    .bismillah {
+      font-family: "IranNastaliq", serif;
+      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      color: #f7e5b2;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-shadow: 0 0 18px rgba(212, 175, 55, .45);
+      position: relative;
+      z-index: 2;
+    }
+
+    .gold-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px auto 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gold-divider::before,
+    .gold-divider::after {
+      content: "";
+      width: clamp(60px, 20vw, 110px);
+      height: 1.5px;
+      background: linear-gradient(to right, transparent, #d4af37, transparent);
+    }
+
+    .gold-divider span {
+      color: #d4af37;
+      font-size: 24px;
+      text-shadow: 0 0 10px rgba(212, 175, 55, .45);
+    }
+
+    .logo6 {
+      width: clamp(200px, 60vw, 420px);
+      max-width: 90%;
+      margin: 0 auto 8px;
+      display: block;
+      animation: floatingLogo 6s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .text1 {
+      width: clamp(140px, 40vw, 280px);
+      max-width: 75%;
+      margin: 0 auto 12px;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes floatingLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .invite-btn {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      max-width: 360px;
+      height: 60px;
+      margin: 10px auto 5px;
+      border-radius: 60px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #111;
+      background: linear-gradient(135deg, #ffffff, #f8e7b0);
+      font-size: clamp(17px, 4vw, 22px);
+      font-weight: 800;
+      letter-spacing: .5px;
+      transition: .35s;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, .35), inset 0 2px 0 rgba(255, 255, 255, .9);
+      z-index: 2;
+      border: none;
+      cursor: pointer;
+    }
+
+    .invite-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .95), transparent);
+      animation: shine 3s infinite;
+    }
+
+    .invite-btn:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, .45);
+    }
+
+    .invite-btn:active {
+      transform: scale(.98);
+    }
+
+    @keyframes shine {
+      100% { left: 160%; }
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 28px 0;
+      width: 100%;
+    }
+
+    /* ---------- Action Grid ---------- */
+    .action-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 22px 18px;
+      text-align: center;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid rgba(212, 175, 55, .35);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      transition: .45s;
+      box-shadow: 0 0 0 1px rgba(255, 215, 120, .08), 0 0 25px rgba(212, 175, 55, .12), 0 15px 35px rgba(0, 0, 0, .22);
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(212, 175, 55, .9), rgba(255, 255, 255, .2), rgba(212, 175, 55, .9));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: .75;
+      pointer-events: none;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(rgba(255, 225, 120, .95), transparent 70%);
+      filter: blur(35px);
+      opacity: .55;
+      animation: borderLight 8s linear infinite;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: var(--surface-hover);
+      border-color: rgba(212, 175, 55, .55);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, .45);
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 8px;
+      display: block;
+      color: var(--gold);
+      transition: .4s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card h2,
+    .card h3 {
+      font-size: clamp(20px, 4vw, 26px);
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card p {
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---------- Countdown ---------- */
+    .count-title {
+      text-align: center;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      margin: 10px 0 16px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      direction: ltr;
+    }
+
+    .timer div {
+      width: clamp(72px, 20vw, 125px);
+      height: clamp(72px, 20vw, 125px);
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(40, 33, 25, .95), rgba(18, 18, 18, .95));
+      border: 1px solid rgba(212, 175, 55, .28);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), 0 8px 20px rgba(0, 0, 0, .35);
+      transition: .35s;
+    }
+
+    .timer div:hover {
+      transform: translateY(-6px);
+      border-color: #f3c45d;
+      box-shadow: 0 0 20px rgba(212, 175, 55, .45);
+    }
+
+    .timer span {
+      color: #f3c45d;
+      font-size: clamp(28px, 7vw, 42px);
+      font-weight: 700;
+      text-shadow: 0 0 12px rgba(212, 175, 55, .45);
+      line-height: 1.2;
+    }
+
+    .timer p {
+      color: #fff;
+      opacity: .9;
+      font-size: clamp(12px, 3vw, 17px);
+      margin-top: 2px;
+    }
+
+    /* ---------- Location Box ---------- */
+    .location-box {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 22px 18px;
+      border-radius: 22px;
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(212, 175, 55, .35);
+      box-shadow: 0 0 0 1px rgba(255, 215, 120, .08), 0 0 25px rgba(212, 175, 55, .12), 0 18px 50px rgba(0, 0, 0, .35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .location-box::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, .7), rgba(212, 175, 55, .9), rgba(255, 255, 255, .2), rgba(212, 175, 55, .9));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: .75;
+      pointer-events: none;
+    }
+
+    .location-box::after {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(rgba(255, 225, 120, .95), transparent 70%);
+      filter: blur(35px);
+      opacity: .55;
+      animation: borderLight 8s linear infinite;
+    }
+
+    .location-box h2 {
+      text-align: center;
+      font-size: clamp(26px, 6vw, 34px);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .location-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .map-btn {
+      width: clamp(90px, 25vw, 135px);
+      height: clamp(90px, 25vw, 135px);
+      border-radius: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      background: rgba(255, 255, 255, .05);
+      transition: .4s;
+    }
+
+    .map-btn:hover {
+      transform: translateY(-6px);
+      background: linear-gradient(145deg, #fff, #f5d27a);
+      color: #111;
+    }
+
+    .map-btn span {
+      font-size: clamp(14px, 3vw, 18px);
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .map-btn .map-icon {
+      font-size: clamp(32px, 8vw, 48px);
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .map-btn:hover .map-icon {
+      color: #111;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      margin-top: 20px;
+      padding: 28px 20px 35px;
+      text-align: center;
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      width: 100%;
+    }
+
+    footer h2 {
+      font-size: clamp(24px, 6vw, 38px);
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    footer .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ffffff, #f8e7b0);
+      color: #111;
+      font-weight: 700;
+      font-size: clamp(16px, 3.5vw, 20px);
+      text-decoration: none;
+      transition: .35s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    }
+
+    footer .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .4);
+    }
+
+    /* ---------- Back To Top ---------- */
+    #topButton {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      background: linear-gradient(135deg, white, var(--gold-light));
+      color: #111;
+      font-size: 20px;
+      display: none;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .35);
+      transition: .35s;
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #topButton:hover {
+      transform: translateY(-5px) scale(1.08);
+    }
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    /* ---------- تبلت (768px به بالا) ---------- */
+    @media (min-width: 768px) {
+      .hero {
+        padding: 40px 20px 50px;
+      }
+
+      .hero .overlay {
+        padding: 45px 40px;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timer div {
+        width: 110px;
+        height: 110px;
+      }
+
+      .timer span {
+        font-size: 38px;
+      }
+    }
+
+    /* ---------- دسکتاپ (1024px به بالا) ---------- */
+    @media (min-width: 1024px) {
+      .hero .overlay {
+        padding: 55px 50px;
+      }
+
+      .action-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .timer div {
+        width: 125px;
+        height: 125px;
+      }
+
+      .timer span {
+        font-size: 42px;
+      }
+    }
+
+    /* ---------- موبایل‌های خیلی کوچک (حداکثر 420px) ---------- */
+    @media (max-width: 420px) {
+      .hero .overlay {
+        padding: 20px 14px;
+      }
+
+      .bismillah {
+        font-size: 2.4rem;
+      }
+
+      .timer div {
+        width: 65px;
+        height: 65px;
+      }
+
+      .timer span {
+        font-size: 24px;
+      }
+
+      .map-btn {
+        width: 80px;
+        height: 80px;
+      }
+
+      .map-btn .map-icon {
+        font-size: 28px;
+      }
+
+      .card {
+        padding: 18px 14px;
+      }
+
+      .icon {
+        font-size: 34px;
+      }
+
+      .invite-btn {
+        height: 52px;
+        font-size: 16px;
+      }
+    }
+
+    /* ---------- Scrollbar ---------- */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090909;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--gold), #f6db92);
+      border-radius: 50px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(#cdb77b, var(--gold));
+    }
+  </style>
+
+  <!-- ====== فونت‌ها ====== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-<div id="loader">
+  <!-- ====== LOADER ====== -->
+  <div id="loader">
+    <div class="loader-heart"></div>
+    <h2>کارت عروسی حسن و هانیه ...</h2>
+  </div>
 
-<div class="loader-heart"></div>
+  <!-- ====== HERO ====== -->
+  <header class="hero">
+    <div class="overlay">
+      <p class="bismillah">به نام خالق عشق</p>
+      <div class="gold-divider">
+        <span>⫸♡⫷</span>
+      </div>
+      <img src="assets/images/logo6.png" class="logo6" alt="logo" />
+      <img src="assets/images/text1.png" class="text1" alt="حسن و هانیه" />
+      <a class="invite-btn" href="https://DigiPostal.ir/chag05j" target="_blank">❤️ مشاهده دعوت نامه ❤️</a>
+    </div>
+  </header>
 
-<h2> کارت عروسی حسن و هانیه  ...</h2>
+  <!-- ====== ACTIONS + COUNTDOWN ====== -->
+  <section class="actions">
+    <div class="action-grid">
 
-</div>
-
-<header class="hero">
-
-<div class="overlay">
-
-<p class="bismillah">
-به نام خالق عشق
-</p>
-<div class="gold-divider">
-    <span>⫸♡⫷</span>
-</div>
-<div class="hero-text">
-
-    <img src="assets/images/logo6.png" class="logo6">
-    <img src="assets/images/text1.png" class="text1">
-
-</div>
-<a class="invite-btn"
-
-href="https://DigiPostal.ir/chag05j"
-
-target="_blank"
-style="color:#000;">
-  ❤️ مشاهده دعوت نامه❤️ 
-</a>
-
-</div>
-</header>
-<section class="actions">
-<div class="action-grid">
-
-<section class="location-box">
-
-    <h2> آدرس</h2>
-
-    <div class="location-buttons">
-
-        <a href="https://balad.ir/p/2uB6hMm6DpDHnx"
-           target="_blank"
-           class="map-btn">
-
-            📌
+      <!-- آدرس -->
+      <div class="location-box">
+        <h2>📍 آدرس</h2>
+        <div class="location-buttons">
+          <a href="https://balad.ir/p/2uB6hMm6DpDHnx" target="_blank" class="map-btn">
+            <span class="map-icon">📌</span>
             <span>بلد</span>
+          </a>
+          <a href="https://maps.app.goo.gl/s6hBtLJimNdDkFpaA" target="_blank" class="map-btn">
+            <span class="map-icon">🗺️</span>
+            <span>Maps</span>
+          </a>
+        </div>
+      </div>
 
-        </a>
+      <!-- ارسال عکس -->
+      <a class="card" href="tg://resolve?domain=hanieh_jewelry_designer" target="_blank">
+        <span class="icon">📷</span>
+        <h2>ارسال عکس</h2>
+        <p>از طریق تلگرام</p>
+      </a>
 
-        <a href="https://maps.app.goo.gl/s6hBtLJimNdDkFpaA"
-           target="_blank"
-           class="map-btn">
-
-            🗺️
-            <span> Maps</span>
-
-        </a>
-
+      <!-- شمارش معکوس -->
+      <div class="card">
+        <h2 class="count-title" style="margin:0 0 12px;">⏳ شمارش معکوس</h2>
+        <div class="timer">
+          <div>
+            <span id="days">00</span>
+            <p>روز</p>
+          </div>
+          <div>
+            <span id="hours">00</span>
+            <p>ساعت</p>
+          </div>
+          <div>
+            <span id="minutes">00</span>
+            <p>دقیقه</p>
+          </div>
+          <div>
+            <span id="seconds">00</span>
+            <p>ثانیه</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <h2>منتظر حضور گرم شما هستیم</h2>
+    <h2 style="font-size:clamp(28px,6vw,42px);">❤️💗❤️</h2>
+    <a class="btn" href="tg://resolve?domain=hanieh_jewelry_designer" target="_blank">💌 ارتباط در تلگرام 💌</a>
+  </footer>
 
-<a class="card"
+  <!-- ====== BACK TO TOP ====== -->
+  <button id="topButton" aria-label="بازگشت به بالا">↑</button>
 
-href="tg://resolve?domain=hanieh_jewelry_designer"
-onclick="window.location='https://t.me/hanieh_jewelry_designer';"
+  <!-- ====== فایل JS ====== -->
+  <script>
+    // ==================================================
+    // script.js
+    // ==================================================
 
-target="_blank">
+    // ---------- Loader ----------
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader');
+      if (loader) {
+        setTimeout(() => {
+          loader.style.opacity = '0';
+          loader.style.pointerEvents = 'none';
+          setTimeout(() => { loader.style.display = 'none'; }, 600);
+        }, 800);
+      }
+    });
 
-<div class="icon">📷</div>
+    // ---------- Countdown ----------
+    (function() {
+      const targetDate = new Date('2026-07-25T20:00:00').getTime();
 
-<h2>ارسال عکس </h2>
-</a>
-<h2 class="count-title">شمارش معکوس مراسم</h2>
-<div class="timer">
+      function updateTimer() {
+        const now = Date.now();
+        let diff = targetDate - now;
+        if (diff < 0) diff = 0;
 
-    <div>
-        <span id="days">00</span>
-        <p>روز</p>
-    </div>
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    <div>
-        <span id="hours">00</span>
-        <p>ساعت</p>
-    </div>
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      }
 
-    <div>
-        <span id="minutes">00</span>
-        <p>دقیقه</p>
-    </div>
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    })();
 
-    <div>
-        <span id="seconds">00</span>
-        <p>ثانیه</p>
-    </div>
+    // ---------- Back to Top ----------
+    const topBtn = document.getElementById('topButton');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        topBtn.style.display = 'flex';
+      } else {
+        topBtn.style.display = 'none';
+      }
+    });
+    topBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-</div>
-</section>
-<section class="gallery">
-<footer>
-<h2>منتظر حضور گرم شما هستیم </h2>
-<h2>❤️💗❤️</h2>
-
-<a class="btn"
-href="tg://resolve?domain=hanieh_jewelry_designer"
-onclick="window.location='https://t.me/hanieh_jewelry_designer';">
-
-💌 ارتباط در تلگرام💌
-
-</a>
-
-</footer>
-
-<button id="topButton">
-
-↑
-
-</button>
-
-<script src="script.js"></script>
+    // ---------- کلیک روی کارت تلگرام (fallback) ----------
+    document.querySelectorAll('.card[href*="tg://"]').forEach(el => {
+      el.addEventListener('click', function(e) {
+        const url = this.getAttribute('href');
+        if (url && url.startsWith('tg://')) {
+          setTimeout(() => {
+            if (!document.hidden) {
+              window.location = 'https://t.me/hanieh_jewelry_designer';
+            }
+          }, 500);
+        }
+      });
+    });
+  </script>
 
 </body>
-
 </html>
