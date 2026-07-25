@@ -180,7 +180,7 @@ transform:rotate(45deg) scale(1.15);
 
 .hero{
 
-min-height:40vh;
+min-height:25vh;
 
 display:flex;
 
@@ -301,7 +301,7 @@ background:#f5d27a;
 
 .actions{
 
-padding:90px 8%;
+padding:30px 8%;
 
 }
 
@@ -399,7 +399,7 @@ cursor:pointer;
 
 .countdown{
 
-padding:100px 20px;
+padding:30px 20px;
 
 text-align:center;
 
@@ -412,11 +412,11 @@ justify-content:center;
 
 align-items:center;
 
-gap:8px;
+gap:7px;
 
 flex-wrap:wrap;
 
-direction:ltr;
+direction:1tr;
 
 }
 
@@ -426,7 +426,7 @@ text-align:center;
 
 margin-bottom:0px;
 
-font-size:30px;
+font-size:20px;
 
 }
 
@@ -472,8 +472,7 @@ font-size:18px;
 
 .gallery{
 
-padding:100px 8%;
-
+padding:30px 5%;
 text-align:center;
 
 }
@@ -518,7 +517,7 @@ transform:scale(1.05);
 
 .music{
 
-padding:90px 20px;
+padding:30px 20px;
 
 text-align:center;
 
@@ -536,7 +535,7 @@ font-size:20px;
 
 footer{
 
-padding:80px 20px;
+padding:25px 20px;
 
 text-align:center;
 
@@ -715,7 +714,7 @@ width:100%;
 
 font-size:18px;
 
-padding:16px;
+padding:1px;
 
 }
 
@@ -733,7 +732,7 @@ padding:25px;
 
 .icon{
 
-font-size:50px;
+font-size:30px;
 
 }
 
@@ -861,9 +860,9 @@ height:320px;
     width:90%;
     max-width:750px;
 
-    margin:80px auto;
+    margin:25px auto;
 
-    padding:40px;
+    padding:20px;
 
     border-radius:30px;
 
@@ -891,7 +890,7 @@ height:320px;
 
     justify-content:center;
 
-    gap:25px;
+    gap:20px;
 
     flex-wrap:wrap;
 
@@ -899,9 +898,9 @@ height:320px;
 
 .map-btn{
 
-    width:180px;
+    width:100px;
 
-    height:180px;
+    height:100px;
 
     display:flex;
 
